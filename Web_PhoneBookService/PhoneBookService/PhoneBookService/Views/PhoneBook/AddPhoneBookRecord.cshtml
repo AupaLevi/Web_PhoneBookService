@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "CreatePhone";
+}
+
+@model PhoneBookService.Models.RecordDataObject
+
+<style>
+    #left {
+        float: left;
+    }
+    #right {
+        margin-left: 400px;
+    }
+
+    #button {
+        position: absolute;
+        left: 0px;
+        bottom: -70px;
+    }
+</style>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Create Post</h4>
+                @using (Html.BeginForm("Create", "PhoneBook", FormMethod.Post))
+                {
+                    <div class="mb-3" id="left">
+                        <label for="Zza01">工號</label>
+                        @Html.TextBoxFor(model => model.Zza01, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="right">
+                        <label for="Zza02">FirstName</label>
+                        @Html.TextBoxFor(model => model.Zza02, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="left">
+                        <label for="Zza03">LastName</label>
+                        @Html.TextBoxFor(model => model.Zza03, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="right">
+                        <label for="Zza04">姓名</label>
+                        @Html.TextBoxFor(model => model.Zza04, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="left">
+                        <label for="Zza05">Zza05</label>
+                        @Html.TextBoxFor(model => model.Zza05, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="right">
+                        <label for="Zza06">成本中心</label>
+                        @Html.TextBoxFor(model => model.Zza06, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="left">
+                        <label for="Zza07">分機</label>
+                        @Html.TextBoxFor(model => model.Zza07, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="right">
+                        <label for="Zza08">Zza08</label>
+                        @Html.TextBoxFor(model => model.Zza08, new { @class = "form-control" })
+                    </div>
+                    <div class="mb-3" id="left">
+                        <label for="Zza09">Zza09</label>
+                        @Html.TextBoxFor(model => model.Zza09, new { @class = "form-control" })
+                    </div>
+
+                    
+                    <div class="mb-3" id="button">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</body>
