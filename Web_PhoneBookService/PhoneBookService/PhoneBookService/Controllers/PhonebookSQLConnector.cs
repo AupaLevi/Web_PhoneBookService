@@ -226,7 +226,7 @@ namespace PhoneBookService.Controllers
             }
             catch (Exception ex)
             {
-
+                actionResult = "FAIL" + ex.Message;
             }
             finally
             {
