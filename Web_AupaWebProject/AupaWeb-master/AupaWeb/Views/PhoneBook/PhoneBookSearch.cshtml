@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "PhoneBookSearch";
+}
+
+@model AupaWeb.Models.PhoneBookViewModel
+
+
+    <main role="main" class="container">
+        <br />
+        <br />
+        @using (Html.BeginForm("SearchPhoneBook", "PhoneBook", FormMethod.Post))
+        {
+            <div class="col-md-4 order-md-2 mb-4">
+                <p>
+                    <label for="ColValue">搜尋文字</label>
+                    @Html.TextBoxFor(m => m.ColValue, new { @class = "form-control" })
+                </p>
+                <p>
+                    <label for="ColName">搜尋項目</label>
+                    @Html.DropDownListFor(m => m.Zza06, Model.SelectListItems, "Please select",
+                                     new { @style = "width: 260px;", @class = "form-control" })
+                </p>
+                <button type="submit" name="Search" class="btn btn-primary">查詢</button>
+
+            </div>
+            <button type="submit" name="Audit" class="btn btn-sm btn-outline-secondary">稽核室</button>
+            <button type="submit" name="TDD" class="btn btn-sm btn-outline-secondary">技術開發處</button>
+            <button type="submit" name="TD" class="btn btn-sm btn-outline-secondary">技術開發部</button>
+            <button type="submit" name="ALS" class="btn btn-sm btn-outline-secondary">分析部</button>
+            <button type="submit" name="TS" class="btn btn-sm btn-outline-secondary">技術整合部</button>
+            <button type="submit" name="IO" class="btn btn-sm btn-outline-secondary">資訊處</button>
+            <button type="submit" name="IT" class="btn btn-sm btn-outline-secondary">資訊部</button>
+            <button type="submit" name="BDO" class="btn btn-sm btn-outline-secondary">業務開發處</button>
+            <button type="submit" name="BD" class="btn btn-sm btn-outline-secondary">業務開發部</button>
+            <button type="submit" name="FAO" class="btn btn-sm btn-outline-secondary">財務會計處</button>
+            <button type="submit" name="FA" class="btn btn-sm btn-outline-secondary">財務會計部</button>
+            <button type="submit" name="MD" class="btn btn-sm btn-outline-secondary">製造事業處</button>
+            <button type="submit" name="PD" class="btn btn-sm btn-outline-secondary">生產部</button>
+            <button type="submit" name="PKG" class="btn btn-sm btn-outline-secondary">包裝課</button>
+            <button type="submit" name="PMA" class="btn btn-sm btn-outline-secondary">製造課</button>
+            <button type="submit" name="ENG" class="btn btn-sm btn-outline-secondary">工程部</button>
+            <button type="submit" name="QA" class="btn btn-sm btn-outline-secondary">品保部</button>
+            <button type="submit" name="QC" class="btn btn-sm btn-outline-secondary">品管部</button>
+            <button type="submit" name="PP" class="btn btn-sm btn-outline-secondary">生管部</button>
+            <button type="submit" name="WH" class="btn btn-sm btn-outline-secondary">倉庫部</button>
+            <button type="submit" name="QS" class="btn btn-sm btn-outline-secondary">品質系統</button>
+            <button type="submit" name="AD" class="btn btn-sm btn-outline-secondary">行政管理處</button>
+            <button type="submit" name="HR" class="btn btn-sm btn-outline-secondary">人資部</button>
+            <button type="submit" name="PUR" class="btn btn-sm btn-outline-secondary">採購部</button>
+
+        }
+
+
+        <div class="panel-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th align="center" style="width: 200px">工號</th>
+                        <th style="width: 200px">成本中心</th>
+                        <th style="width: 200px">姓名</th>
+                        <th style="width: 200px">分機號碼</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var eachUserData in Model.UserBasicDataList)
+                    {
+                        <tr>
+                            <td>@eachUserData.Zza01</td>
+                            <td>@eachUserData.Zza06</td>
+                            <td>@eachUserData.Zza04</td>
+                            <td>@eachUserData.Zza07</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </main>

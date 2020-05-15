@@ -1,0 +1,57 @@
+﻿@model AupaWeb.Models.PostDataViewModel
+
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+        </div>
+
+        <div class="panel-title">
+            <p>
+                搜尋:@Html.TextBox("Search_Data", ViewBag.FilterValue as string)<br />
+
+            </p>
+            <p>
+                搜尋類別: <select id="feature">
+                    <option value="EmployeeNo">工號</option>
+                    <option value="FirstName">姓名</option>
+                    <option value="LastName">英文姓名</option>
+                    <option value="EMail">信箱</option>
+                    <option value="OfficeCode">成本中心</option>
+                    <option value="Extension">分機號碼</option>
+                    <option value="JobTitle">職稱</option>
+                </select>
+            </p>
+            <input type="submit" value="搜尋" />
+            <input type="submit" value="清除" />
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th align="center" style="width: 200px">工號</th>
+                        <th style="width: 200px">姓名</th>
+                        <th style="width: 200px">英文姓名</th>
+                        <th style="width: 200px">信箱</th>
+                        <th style="width: 200px">成本中心</th>
+                        <th style="width: 200px">分機號碼</th>
+                        <th style="width: 200px">職稱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <nav>
+
+            </nav>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+            <h1></h1><h1></h1>
+            <h1></h1><h1></h1>
+        </div>
+    </div>
+</body>
