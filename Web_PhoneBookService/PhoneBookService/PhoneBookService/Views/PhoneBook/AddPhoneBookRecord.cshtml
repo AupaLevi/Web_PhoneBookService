@@ -2,7 +2,7 @@
     ViewBag.Title = "CreatePhone";
 }
 
-@model PhoneBookService.Models.RecordDataObject
+@model PhoneBookService.Models.RecordDataViewModel
 
 <style>
     #left {
@@ -49,7 +49,7 @@
                         @Html.TextBoxFor(model => model.Zza04, new { @class = "form-control", @required = "required" })
                     </div>
                     <div class="mb-3" id="left">
-                        <label for="Zza05">Zza05</label>
+                        <label for="Zza05">EMail</label>
                         @Html.TextBoxFor(model => model.Zza05, new { @class = "form-control" })
                     </div>
                     <div class="mb-3" id="right">
@@ -61,17 +61,19 @@
                         @Html.TextBoxFor(model => model.Zza07, new { @class = "form-control" })
                     </div>
                     <div class="mb-3" id="right">
-                        <label for="Zza08">Zza08</label>
-                        @Html.TextBoxFor(model => model.Zza08, new { @class = "form-control" })
+                        <label for="Zza08">職稱</label>
+                        @Html.DropDownListFor(m => m.Zza08, Model.SelectListItems, "Please select",
+                                     new { @style = "width: 260px;", @class = "form-control" })
                     </div>
                     <div class="mb-3" id="left">
-                        <label for="Zza09">Zza09</label>
+                        <label for="Zza09">角色</label>
                         @Html.TextBoxFor(model => model.Zza09, new { @class = "form-control" })
                     </div>
 
                     
                     <div class="mb-3" id="button">
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onclick="history.go(-1)">Cancel</button>
                     </div>
                 }
 

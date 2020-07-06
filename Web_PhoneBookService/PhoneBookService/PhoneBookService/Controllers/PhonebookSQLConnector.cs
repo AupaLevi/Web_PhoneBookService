@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using PhoneBookService.Models;
+using System.Data;
+using System.Web.Mvc;
 
 namespace PhoneBookService.Controllers
 {
@@ -66,6 +68,133 @@ namespace PhoneBookService.Controllers
                 return false;
             }
         }
+
+        public List<SelectListItem> getJobItem()
+        {
+            string sqlString = "SELECT * " +
+                               "  FROM zzc_file " +
+                               " ORDER BY zzc01 ASC" +
+                               "";
+            List<SelectListItem> officeDataItems = new List<SelectListItem>();
+
+            OpenConnection();
+            actionResult = "SUCCESS";
+
+            try
+            {
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = sqlString;
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        officeDataItems.Add(new SelectListItem
+                        {
+                            Text = dataReader["Zzc02"].ToString(),
+                            Value = dataReader["Zzc02"].ToString()
+                        });
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string v = "FAIL" + ex.Message;
+                actionResult = v;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return officeDataItems;
+        }
+
+        public int GetTotalCount()
+        {
+            String sqlString = "SELECT * FROM zza_file " +
+                               "";
+            OpenConnection();
+            actionResult = "SUCCESS";
+            int rowcount = 0;
+            try
+            {
+                DataTable dataTable = new DataTable();
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = sqlString;
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(dataTable);
+                rowcount = dataTable.Rows.Count;
+            }
+            catch (Exception ex)
+            {
+                string v = "FAIL" + ex.Message;
+                actionResult = v;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return rowcount;
+        }
+
+        public List<RecordDataObject> GetLimitPostsList(String str, String end)
+        {
+            String sqlString = "SELECT * FROM zza_file" +
+                               " ORDER BY zza01 DESC" +
+                               " OFFSET " + str + " ROWS FETCH NEXT " + end + " ROWS ONLY " +
+                               "";
+            List<RecordDataObject> ListAllRecord = new List<RecordDataObject>();
+
+            OpenConnection();
+            actionResult = "SUCCESS";
+
+            try
+            {
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = sqlString;
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        RecordDataObject recordDataObject = new RecordDataObject();
+
+                        recordDataObject.Zza01 = dataReader.GetString(dataReader.GetOrdinal("Zza01"));
+                        recordDataObject.Zza02 = dataReader.GetString(dataReader.GetOrdinal("Zza02"));
+                        recordDataObject.Zza03 = dataReader.GetString(dataReader.GetOrdinal("Zza03"));
+                        recordDataObject.Zza04 = dataReader.GetString(dataReader.GetOrdinal("Zza04"));
+                        recordDataObject.Zza05 = dataReader.GetString(dataReader.GetOrdinal("Zza05"));
+                        recordDataObject.Zza06 = dataReader.GetString(dataReader.GetOrdinal("Zza06"));
+                        recordDataObject.Zza07 = dataReader.GetString(dataReader.GetOrdinal("Zza07"));
+                        recordDataObject.Zza08 = dataReader.GetString(dataReader.GetOrdinal("Zza08"));
+                        recordDataObject.Zza09 = dataReader.GetString(dataReader.GetOrdinal("Zza09"));
+
+                        ListAllRecord.Add(recordDataObject);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string v = "FAIL" + ex.Message;
+                actionResult = v;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return ListAllRecord;
+        }//End of getLimitPostsList
 
         public String InsertPostData(RecordDataObject recordDataObject)
         {

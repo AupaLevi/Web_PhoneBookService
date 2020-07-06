@@ -271,6 +271,8 @@ D:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csprojAssemblyRe
 D:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csproj.CopyComplete
 D:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.dll
 D:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.pdb
+E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csprojAssemblyReference.cache
+E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csproj.CoreCompileInputs.cache
 E:\PhoneBookService\PhoneBookService\bin\PhoneBookService.dll.config
 E:\PhoneBookService\PhoneBookService\bin\PhoneBookService.dll
 E:\PhoneBookService\PhoneBookService\bin\PhoneBookService.pdb
@@ -358,8 +360,6 @@ E:\PhoneBookService\PhoneBookService\bin\zh-Hant\System.Web.Razor.resources.dll
 E:\PhoneBookService\PhoneBookService\bin\zh-Hant\System.Web.WebPages.resources.dll
 E:\PhoneBookService\PhoneBookService\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
 E:\PhoneBookService\PhoneBookService\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
-E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csprojAssemblyReference.cache
-E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csproj.CoreCompileInputs.cache
 E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.csproj.CopyComplete
 E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.dll
 E:\PhoneBookService\PhoneBookService\obj\Debug\PhoneBookService.pdb
