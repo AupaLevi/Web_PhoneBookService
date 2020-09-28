@@ -1,0 +1,9 @@
+E:\Projects\IntermediateDataService\IntermediateDataService\bin\Debug\IntermediateDataService.exe.config
+E:\Projects\IntermediateDataService\IntermediateDataService\bin\Debug\IntermediateDataService.exe
+E:\Projects\IntermediateDataService\IntermediateDataService\bin\Debug\IntermediateDataService.pdb
+E:\Projects\IntermediateDataService\IntermediateDataService\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\Projects\IntermediateDataService\IntermediateDataService\obj\Debug\IntermediateDataService.csprojAssemblyReference.cache
+E:\Projects\IntermediateDataService\IntermediateDataService\obj\Debug\IntermediateDataService.csproj.CoreCompileInputs.cache
+E:\Projects\IntermediateDataService\IntermediateDataService\obj\Debug\IntermediateDataService.csproj.CopyComplete
+E:\Projects\IntermediateDataService\IntermediateDataService\obj\Debug\IntermediateDataService.exe
+E:\Projects\IntermediateDataService\IntermediateDataService\obj\Debug\IntermediateDataService.pdb
